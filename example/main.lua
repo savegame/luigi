@@ -1,4 +1,6 @@
 local Layout = require 'luigi.layout'
+-- local love = require "luigi.backend.love"
+-- local love = require "luigi.backend.love"
 
 local layout = Layout(require 'layout.main')
 local aboutDialog = Layout(require 'layout.about')
@@ -101,7 +103,14 @@ layout.fish:onChange(function()
 end)
 
 -- show the main layout
-layout:show()
+
 
 -- only needed when using LuaJIT/SDL and not using launch.lua
 -- Backend.run()
+
+function love.draw()
+    love.graphics.setColor(255,80,90,255)
+    love.graphics.rectangle('fill', 100,100,100,100)
+end
+
+layout:show()
